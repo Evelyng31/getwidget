@@ -259,7 +259,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                   color: widget.dropdownBgColor,
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.black12,
+                      color: Colors.red,
                       blurRadius: 3,
                     )
                   ],
@@ -268,7 +268,6 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                   child: Column(
                     children: [
                       Container(
-                        height: 20,
                         child: Column(
                             children: List.generate(
                                 widget.items.length,
