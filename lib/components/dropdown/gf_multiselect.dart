@@ -223,6 +223,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
               });
             },
             child: Container(
+              height: 50,
                 margin: widget.dropdownTitleTileMargin,
                 padding: widget.dropdownTitleTilePadding,
                 decoration: BoxDecoration(
