@@ -200,7 +200,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
   @override
   Widget build(BuildContext context) {
     Widget dropdownTile() => Row(
-         // crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             _selectedTitles.isEmpty
@@ -267,36 +267,39 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Column(
-                          children: List.generate(
-                              widget.items.length,
-                              (index) => GFCheckboxListTile(
-                                    value: _selectedTitles
-                                        .contains(widget.items[index]),
-                                    onChanged: (bool selected) {
-                                      _controller.text;
-                                      _onItemSelect(selected, index);
+                      Container(
+                        height: 20,
+                        child: Column(
+                            children: List.generate(
+                                widget.items.length,
+                                (index) => GFCheckboxListTile(
+                                      value: _selectedTitles
+                                          .contains(widget.items[index]),
+                                      onChanged: (bool selected) {
+                                        _controller.text;
+                                        _onItemSelect(selected, index);
 
-                                      widget.onSelect(_selectedTitlesIndex);
-                                    },
-                                    selected: widget.selected,
-                                    avatar: widget.avatar,
-                                    titleText: widget.items[index],
-                                    color: widget.color,
-                                    padding: widget.padding,
-                                    margin: widget.margin,
-                                    size: widget.size,
-                                    activeBgColor: widget.activeBgColor,
-                                    inactiveIcon: widget.inactiveIcon,
-                                    activeBorderColor: widget.activeBorderColor,
-                                    inactiveBgColor: widget.inactiveBgColor,
-                                    activeIcon: widget.activeIcon,
-                                    inactiveBorderColor:
-                                        widget.inactiveBorderColor,
-                                    customBgColor: widget.customBgColor,
-                                    // checkColor: widget.checkColor,
-                                    type: widget.type,
-                                  ))),
+                                        widget.onSelect(_selectedTitlesIndex);
+                                      },
+                                      selected: widget.selected,
+                                      avatar: widget.avatar,
+                                      titleText: widget.items[index],
+                                      color: widget.color,
+                                      padding: widget.padding,
+                                      margin: widget.margin,
+                                      size: widget.size,
+                                      activeBgColor: widget.activeBgColor,
+                                      inactiveIcon: widget.inactiveIcon,
+                                      activeBorderColor: widget.activeBorderColor,
+                                      inactiveBgColor: widget.inactiveBgColor,
+                                      activeIcon: widget.activeIcon,
+                                      inactiveBorderColor:
+                                          widget.inactiveBorderColor,
+                                      customBgColor: widget.customBgColor,
+                                      // checkColor: widget.checkColor,
+                                      type: widget.type,
+                                    ))),
+                      ),
                       widget.dropdownButton ??
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
