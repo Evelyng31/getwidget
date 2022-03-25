@@ -266,12 +266,12 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                   ],
                 ),
                 child: SingleChildScrollView(
-                  child: Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Container(
-                          color: Colors.blue,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          //color: Colors.blue,
                           child: Column(
                               children: List.generate(
                                   widget.items.length,
@@ -304,33 +304,33 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                                         type: widget.type,
                                       ))),
                         ),
-                        widget.dropdownButton ??
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                GFButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      showDropdown = !showDropdown;
-                                      _selectedTitles.clear();
-                                      _selectedTitlesIndex.clear();
-                                    });
-                                  },
-                                  child:
-                                      widget.cancelButton ?? const Text('CANCEL'),
-                                ),
-                                GFButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      showDropdown = !showDropdown;
-                                    });
-                                  },
-                                  child: widget.submitButton ?? const Text('OK'),
-                                )
-                              ],
-                            )
-                      ],
-                    ),
+                      ),
+                      widget.dropdownButton ??
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              GFButton(
+                                onPressed: () {
+                                  setState(() {
+                                    showDropdown = !showDropdown;
+                                    _selectedTitles.clear();
+                                    _selectedTitlesIndex.clear();
+                                  });
+                                },
+                                child:
+                                    widget.cancelButton ?? const Text('CANCEL'),
+                              ),
+                              GFButton(
+                                onPressed: () {
+                                  setState(() {
+                                    showDropdown = !showDropdown;
+                                  });
+                                },
+                                child: widget.submitButton ?? const Text('OK'),
+                              )
+                            ],
+                          )
+                    ],
                   ),
                 ),
               )
