@@ -254,12 +254,13 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                 ))),
         showDropdown
             ? Container(
+              ////should I add hereee???
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 decoration: BoxDecoration(
                   color: widget.dropdownBgColor,
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.red,
+                      color: Colors.black12,
                       blurRadius: 3,
                     )
                   ],
@@ -268,6 +269,9 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                   child: Column(
                     children: [
                       Container(
+                        height: 10,
+                        color: Colors.blue,
+                        ///should i add hereee??
                         child: Column(
                             children: List.generate(
                                 widget.items.length,
