@@ -271,9 +271,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                     child: Column(
                       children: [
                         Container(
-                          height: 10,
                           color: Colors.blue,
-                          ///should i add hereee??
                           child: Column(
                               children: List.generate(
                                   widget.items.length,
