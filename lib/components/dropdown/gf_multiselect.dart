@@ -281,8 +281,9 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                                       onChanged: (bool selected) {
                                         _controller.text;
                                         _onItemSelect(selected, index);
-
-                                        widget.onSelect(_selectedTitlesIndex);
+                                        
+                                        widget.onSelect(_selectedTitles);
+                                       // widget.onSelect(_selectedTitlesIndex);
                                       },
                                       selected: widget.selected,
                                       avatar: widget.avatar,
