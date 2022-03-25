@@ -254,7 +254,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                 ))),
         showDropdown
             ? Container(
-                height: 185,
+                //height: 185,
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 decoration: BoxDecoration(
                   color: widget.dropdownBgColor,
@@ -266,70 +266,73 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> {
                   ],
                 ),
                 child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 10,
-                        color: Colors.blue,
-                        ///should i add hereee??
-                        child: Column(
-                            children: List.generate(
-                                widget.items.length,
-                                (index) => GFCheckboxListTile(
-                                      value: _selectedTitles
-                                          .contains(widget.items[index]),
-                                      onChanged: (bool selected) {
-                                        _controller.text;
-                                        _onItemSelect(selected, index);
-                                        
-                                        widget.onSelect(_selectedTitles);
-                                       // widget.onSelect(_selectedTitlesIndex);
-                                      },
-                                      selected: widget.selected,
-                                      avatar: widget.avatar,
-                                      titleText: widget.items[index],
-                                      color: widget.color,
-                                      padding: widget.padding,
-                                      margin: widget.margin,
-                                      size: widget.size,
-                                      activeBgColor: widget.activeBgColor,
-                                      inactiveIcon: widget.inactiveIcon,
-                                      activeBorderColor: widget.activeBorderColor,
-                                      inactiveBgColor: widget.inactiveBgColor,
-                                      activeIcon: widget.activeIcon,
-                                      inactiveBorderColor:
-                                          widget.inactiveBorderColor,
-                                      customBgColor: widget.customBgColor,
-                                      // checkColor: widget.checkColor,
-                                      type: widget.type,
-                                    ))),
-                      ),
-                      widget.dropdownButton ??
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              GFButton(
-                                onPressed: () {
-                                  setState(() {
-                                    showDropdown = !showDropdown;
-                                    _selectedTitles.clear();
-                                    _selectedTitlesIndex.clear();
-                                  });
-                                },
-                                child:
-                                    widget.cancelButton ?? const Text('CANCEL'),
-                              ),
-                              GFButton(
-                                onPressed: () {
-                                  setState(() {
-                                    showDropdown = !showDropdown;
-                                  });
-                                },
-                                child: widget.submitButton ?? const Text('OK'),
-                              )
-                            ],
-                          )
-                    ],
+                  child: Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 10,
+                          color: Colors.blue,
+                          ///should i add hereee??
+                          child: Column(
+                              children: List.generate(
+                                  widget.items.length,
+                                  (index) => GFCheckboxListTile(
+                                        value: _selectedTitles
+                                            .contains(widget.items[index]),
+                                        onChanged: (bool selected) {
+                                          _controller.text;
+                                          _onItemSelect(selected, index);
+                                          
+                                          widget.onSelect(_selectedTitles);
+                                         // widget.onSelect(_selectedTitlesIndex);
+                                        },
+                                        selected: widget.selected,
+                                        avatar: widget.avatar,
+                                        titleText: widget.items[index],
+                                        color: widget.color,
+                                        padding: widget.padding,
+                                        margin: widget.margin,
+                                        size: widget.size,
+                                        activeBgColor: widget.activeBgColor,
+                                        inactiveIcon: widget.inactiveIcon,
+                                        activeBorderColor: widget.activeBorderColor,
+                                        inactiveBgColor: widget.inactiveBgColor,
+                                        activeIcon: widget.activeIcon,
+                                        inactiveBorderColor:
+                                            widget.inactiveBorderColor,
+                                        customBgColor: widget.customBgColor,
+                                        // checkColor: widget.checkColor,
+                                        type: widget.type,
+                                      ))),
+                        ),
+                        widget.dropdownButton ??
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                GFButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showDropdown = !showDropdown;
+                                      _selectedTitles.clear();
+                                      _selectedTitlesIndex.clear();
+                                    });
+                                  },
+                                  child:
+                                      widget.cancelButton ?? const Text('CANCEL'),
+                                ),
+                                GFButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showDropdown = !showDropdown;
+                                    });
+                                  },
+                                  child: widget.submitButton ?? const Text('OK'),
+                                )
+                              ],
+                            )
+                      ],
+                    ),
                   ),
                 ),
               )
